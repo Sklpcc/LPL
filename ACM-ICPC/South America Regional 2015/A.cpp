@@ -67,16 +67,16 @@ int main()
     {
     	memset(ns, 0, sizeof(ns));
     	len = in.size();
-		int pivote = solve(0);
-		for (int i = pivote, j = 0; i < len; j++)
+	int pivote = solve(0);
+	for (int i = pivote, j = 0; i < len; j++)
+	{
+		if (ns[to_int(last[j])] < 2)
 		{
-			if (ns[to_int(last[j])] < 2)
-			{
-				in[i++] = last[j];
-				ns[to_int(last[j])]++;
-			}
-		}    
-		cout << string(in.begin() + !(in[0] - '0'), in.end()) << endl;
+			in[i++] = last[j];
+			ns[to_int(last[j])]++;
+		}
+	}    
+	cout << string(in.begin() + !(in[0] - '0'), in.end()) << endl;
     }
 
     return 0;
